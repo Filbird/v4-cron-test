@@ -1,8 +1,10 @@
 shared:
   image: node:6
+  annotations:
+    buildPeriodically: '* * * * *'
 
 jobs:
   main:
-    requires: [~pr, ~commit],
+    requires: [~pr, ~commit]
     steps:
       - hello: echo 'hello'
